@@ -356,7 +356,44 @@
                 { value: "Waduk", symbol: { type: "simple-fill", color: [151, 219, 242, 0.2], outline: { width: 1, color: "#000000" } } }  // biru muda atau light sky blue
                 ]
             };
+            // Warna untuk setiap kategori
+            const renderer_RDTR = {
+                    type: "unique-value",
+                    field: "NAMOBJ",
+                    uniqueValueInfos: [
+                    { value: "Pemakaman", symbol: { type: "simple-fill", color: [204, 153, 153, 0.2], outline: { width: 0.3, color: "#808080" } } }, // merah muda keabu-abuan
+                    { value: "Taman Kota", symbol: { type: "simple-fill", color: [179, 230, 153, 0.2], outline: { width: 0.3, color: "#808080" } } }, // hijau pastel
+                    { value: "Badan Jalan", symbol: { type: "simple-fill", color: [224, 224, 224, 0.2], outline: { width: 0.3, color: "#808080" } } }, // abu-abu terang
+                    { value: "Kawasan Peruntukan Industri", symbol: { type: "simple-fill", color: [255, 230, 153, 0.2], outline: { width: 0.3, color: "#808080" } } }, // kuning pucat
+                    { value: "Badan Air", symbol: { type: "simple-fill", color: [153, 204, 255, 0.2], outline: { width: 0.3, color: "#808080" } } }, // biru muda
+                    { value: "Perlindungan Setempat", symbol: { type: "simple-fill", color: [204, 255, 204, 0.2], outline: { width: 0.3, color: "#808080" } } }, // hijau muda
+                    { value: "Rimba Kota", symbol: { type: "simple-fill", color: [115, 153, 115, 0.2], outline: { width: 0.3, color: "#808080" } } }, // hijau zaitun gelap
+                    { value: "Perumahan Kepadatan Tinggi", symbol: { type: "simple-fill", color: [255, 178, 102, 0.2], outline: { width: 0.3, color: "#808080" } } }, // oranye muda
+                    { value: "Perumahan Kepadatan Sedang", symbol: { type: "simple-fill", color: [255, 204, 153, 0.2], outline: { width: 0.3, color: "#808080" } } }, // jingga terang
+                    { value: "Perdagangan dan Jasa Skala Kota", symbol: { type: "simple-fill", color: [255, 153, 153, 0.2], outline: { width: 0.3, color: "#808080" } } }, // merah muda terang
+                    { value: "Perkantoran", symbol: { type: "simple-fill", color: [204, 229, 255, 0.2], outline: { width: 0.3, color: "#808080" } } }, // biru pastel
+                    { value: "Ruang Terbuka Non Hijau", symbol: { type: "simple-fill", color: [229, 229, 204, 0.2], outline: { width: 0.3, color: "#808080" } } }, // abu-abu kekuningan
+                    { value: "Tanaman Pangan", symbol: { type: "simple-fill", color: [204, 255, 229, 0.2], outline: { width: 0.3, color: "#808080" } } }, // hijau mint
+                    { value: "SPU Skala Kecamatan", symbol: { type: "simple-fill", color: [255, 204, 204, 0.2], outline: { width: 0.3, color: "#808080" } } }, // merah muda lembut
+                    { value: "SPU Skala Kelurahan", symbol: { type: "simple-fill", color: [255, 230, 230, 0.2], outline: { width: 0.3, color: "#808080" } } }, // merah muda sangat lembut
+                    { value: "SPU Skala Kota", symbol: { type: "simple-fill", color: [255, 255, 153, 0.2], outline: { width: 0.3, color: "#808080" } } }, // kuning cerah
+                    { value: "Perdagangan dan Jasa Skala SWP", symbol: { type: "simple-fill", color: [255, 204, 178, 0.2], outline: { width: 0.3, color: "#808080" } } }, // jingga pastel
+                    { value: "Cagar Budaya", symbol: { type: "simple-fill", color: [229, 204, 255, 0.2], outline: { width: 0.3, color: "#808080" } } }, // ungu muda
+                    { value: "Campuran Intensitas Menengah/Sedang", symbol: { type: "simple-fill", color: [255, 255, 204, 0.2], outline: { width: 0.3, color: "#808080" } } }, // kuning pastel
+                    { value: "Pertahanan dan Keamanan", symbol: { type: "simple-fill", color: [230, 153, 255, 0.2], outline: { width: 0.3, color: "#808080" } } }, // ungu cerah
+                    { value: "Jalur Hijau", symbol: { type: "simple-fill", color: [178, 255, 178, 0.2], outline: { width: 0.3, color: "#808080" } } }, // hijau terang
+                    { value: "Perdagangan dan Jasa Skala WP", symbol: { type: "simple-fill", color: [255, 229, 204, 0.2], outline: { width: 0.3, color: "#808080" } } }, // jingga pucat
+                    { value: "Pengelolaan Persampahan", symbol: { type: "simple-fill", color: [230, 255, 230, 0.2], outline: { width: 0.3, color: "#808080" } } }, // hijau sangat muda
+                    { value: "Transportasi", symbol: { type: "simple-fill", color: [192, 192, 192, 0.2], outline: { width: 0.3, color: "#808080" } } }, // abu-abu medium
+                    { value: "Pariwisata", symbol: { type: "simple-fill", color: [255, 230, 179, 0.2], outline: { width: 0.3, color: "#808080" } } }, // jingga terang
+                    { value: "Hutan Produksi Tetap", symbol: { type: "simple-fill", color: [204, 255, 178, 0.2], outline: { width: 0.3, color: "#808080" } } }, // hijau limau
+                    { value: "Perkebunan", symbol: { type: "simple-fill", color: [255, 242, 204, 0.2], outline: { width: 0.3, color: "#808080" } } }, // kuning muda
+                    { value: "Hortikultura", symbol: { type: "simple-fill", color: [230, 255, 153, 0.2], outline: { width: 0.3, color: "#808080" } } }, // hijau limau muda
+                    { value: "Peternakan", symbol: { type: "simple-fill", color: [229, 255, 229, 0.2], outline: { width: 0.3, color: "#808080" } } }, // hijau mint pucat
+                    { value: "Pembangkitan Tenaga Listrik", symbol: { type: "simple-fill", color: [153, 255, 255, 0.2], outline: { width: 0.3, color: "#808080" } } } // cyan terang
 
+                    ]
+                };
             // Insert Basemap
             const map = new Map({
                 basemap: "dark-gray-vector"
@@ -381,7 +418,17 @@
                     content: "Kategori: {NAMOBJ}"
                 }
             });
-
+            // Layer RDTR
+             const RDTR = new GeoJSONLayer({
+                url: "https://raw.githubusercontent.com/codemrc/KRA_RTR/refs/heads/main/RDTR_KARANGANYAR_2024.json",
+                title: "RDTR Kabupaten Karanganyar 2024",
+                renderer: renderer_RDTR,
+                visible: true,
+                popupTemplate: {
+                    title: "{NAMOBJ}",
+                    content: "Kategori: {NAMOBJ}"
+                }
+            });
             // Layer LSD
             const LSD = new GeoJSONLayer({
                 url: "https://raw.githubusercontent.com/codemrc/KRA_RTR/main/LSD_KRA.json",
@@ -744,13 +791,14 @@ function convertLatLonToTM3(latitude, longitude, zone) {
             map.add(PenggunaanTanah);
             map.add(LSD);
             map.add(RTRW);
+            map.add(RDTR);
             
             // Menambahkan LayerList untuk menampilkan semua layer kecuali layer "Persil"
             const layerList = new LayerList({
                 view: view,
                 listItemCreatedFunction: (event) => {
                 // Menyembunyikan layer LSD, kemampuanTanah, dan lereng dari LayerList
-                const hiddenLayers = [LSD, PenggunaanTanah,kemampuanTanah, lereng,BidangPTP];
+                const hiddenLayers = [RDTR, LSD, PenggunaanTanah,kemampuanTanah, lereng,BidangPTP];
                 if (hiddenLayers.includes(event.item.layer)) 
                     {event.item.visible = false;}
                 }
